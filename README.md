@@ -1,0 +1,16 @@
+## Assumptions:
+- Players can overshoot the end, but are considered as ending up at 100
+- Players do not move after a player wins
+- The config.txt is present
+- The config.txt is valid
+  - The file should contain the correct new line endings for the system (the config.txt in this repo was made on a Windows machine)
+  - Transitions (snakes and ladders) come in pairs separated by a space
+  - Each transition is separated by a new line
+  - If you want to override a previous transition, the parser will save the latest start/end pair
+  - Transitions and player moves are separated by two new lines
+  - Rolls of a player are not separated
+  - The roll sets of players are separated by a new line
+- It is allowed for a player to stop rolling but for other players to keep rolling.
+- Game players can only be 0 at game start and 1-100 when on the board. (A config.txt can configure transitions to values outside of 0-100)
+- Game players roll a 1d6. (Parsing can technically handle rolls from a 1d10 die (values 0-9))
+- Game squares are either empty or have the bottom of a snake, or the top of a snake, or the bottom of a ladder, or a top of a ladder
